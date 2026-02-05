@@ -1,0 +1,18 @@
+<!-- CODIGO MENÚ LATERA -->
+<div class="drawer drawer-end">
+  <input id="my-drawer-5" type="checkbox" class="drawer-toggle" />
+  <div class="drawer-content">
+    <label for="my-drawer-5" class="drawer-button btn btn-primary">Open drawer</label>
+  </div>
+
+  <div class="drawer-side">
+    <label for="my-drawer-5" aria-label="close sidebar" class="drawer-overlay"></label>
+    <app-side-menu class="h-full" (controlsValues)="onValuesRecibe($event)" [controles]="control"></app-side-menu>
+  </div>
+</div>
+
+<!-- CODIGO MODAL -->
+<button class="btn" onclick="my_modal_2.showModal()">open modal</button>
+<dialog id="my_modal_2" class="modal">
+  <app-dynamic-modal [controles]="control" (controlsValues)="onValuesRecibe($event)"></app-dynamic-modal>
+</dialog>

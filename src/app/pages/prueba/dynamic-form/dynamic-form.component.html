@@ -1,0 +1,44 @@
+<h3 class="text-lg font-bold">{{ title() }}</h3>
+<form method="dialog" [formGroup]="form" (ngSubmit)="submit()" class="w-full">
+  @for (input of controles(); track input) {
+    @if(input.tipoInput == 'text') {
+
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">{{ input.label }}</legend>
+        <input type="text" class="input focus:outline-none w-full" placeholder="Escriba aquí" [formControlName]="input.key"/>
+      </fieldset>
+
+    } @else if(input.tipoInput == 'select') {
+
+      <fieldset class="fieldset">
+        <legend class="fieldset-legend">{{ input.label }}</legend>
+        <select class="select w-full" [formControlName]="input.key">
+          <option disabled selected class="focus:outline-none">Seleccione una opción</option>
+          @for (option of input.options; track option) {
+            <option>{{ option }}</option>
+          }
+        </select>
+      </fieldset>
+
+    } @else if(input.tipoInput == 'textarea') {
+
+      <fieldset>
+        <legend class="fieldset-legend">{{ input.label }}</legend>
+        <textarea class="textarea focus:outline-none w-full" placeholder="Escriba aquí" [formControlName]="input.key"></textarea>
+      </fieldset>
+
+    } @else if(input.tipoInput == 'checkbox') {
+
+      <fieldset class="fieldset border-base-100 rounded-box w-64 border py-4">
+        <label class="label">
+          <input type="checkbox" checked="checked" class="toggle toggle-success" [formControlName]="input.key"/> {{ input.label }}
+        </label>
+      </fieldset>
+
+    }
+  }
+  <div class="modal-action flex flex-row gap-3">
+    <button class="btn btn-secondary">Regresar</button>
+    <button class="btn btn-primary" type="submit">Guardar</button>
+  </div>
+</form>

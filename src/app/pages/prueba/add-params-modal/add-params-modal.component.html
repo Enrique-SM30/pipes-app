@@ -1,0 +1,50 @@
+<div class="modal-box w-full">
+  <h3 class="text-lg font-bold">Cargar {{ tipoArchivo() }}</h3>
+  @if (tipoArchivo() == 'foto') {
+    <label>Registre la imagen que se presentará en la pantalla inicial del cliente y que es utilizada para seleccionar el desarrollo.</label>
+  } @else {
+    <label>Registre el vídeo que será enviado a los clientes para la promoción de la venta</label>
+  }
+
+  <div>
+    <form method="dialog" [formGroup]="formCargaArchivo" class="flex flex-col gap-3" (ngSubmit)="submit()">
+      @if(tipoArchivo() == 'foto'){
+        <input type="file" class="file-input mt-5" (change)="onFileSelected($event)" accept="image/*">
+      } @else {
+        <input type="file" class="file-input mt-5" (change)="onFileSelected($event)" accept="video/*">
+      }
+      @if(isLoading()){
+        <div class="flex flex-row justify-center">
+          <h1 class="text-xl font-bold flex flex-row self-center">Cargando archivo</h1>
+         <span class="loading loading-dots loading-sm mt-3 ml-1"></span>
+        </div>
+      }
+      @if(previewUrl()) {
+        <div class="mt-4 flex flex-row self-center">
+          @if(tipoArchivo() == 'foto'){
+            <img
+            [src]="previewUrl()"
+            class="w-full rounded-xl shadow-2xl"
+            alt="Preview"
+            />
+          } @else {
+            @if(previewUrl()) {
+              <video
+                [src]="previewUrl()!"
+                (loadeddata)="isLoading.set(false)"
+                controls
+                class="mt-4 w-full max-w-md rounded-xl shadow"
+              ></video>
+            }
+
+          }
+
+        </div>
+      }
+      <div class="modal-action flex flex-row gap-3">
+        <button class="btn btn-secondary">Cerrar</button>
+        <button class="btn btn-primary" type="submit">Agregar</button>
+      </div>
+    </form>
+  </div>
+</div>
