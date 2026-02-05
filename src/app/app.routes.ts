@@ -22,11 +22,6 @@ export const routes: Routes = [
     loadComponent: () => import('./pages/custom-page/custom-page.component')
   },
   {
-    path: 'pruebas',
-    title: 'Pruebas',
-    loadComponent: () => import('./pages/prueba/prueba.component')
-  },
-  {
     path: '**',
     redirectTo: 'basic'
   }
