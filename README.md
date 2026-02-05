@@ -1,59 +1,68 @@
-# PipesApp
+# Pipes App 🧩
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Aplicación desarrollada con **Angular 21** enfocada en el uso y creación de **Pipes personalizados y nativos**, así como en la **internacionalización** y persistencia de preferencias mediante **LocalStorage**.
 
-## Development server
+---
 
-To start a local development server, run:
+## 🚀 Descripción
+
+**Pipes App** es una aplicación Angular básica que demuestra cómo transformar datos en la vista utilizando pipes, crear pipes propios para manejar strings, arreglos y propiedades computadas, así como cambiar el idioma de la aplicación en tiempo de ejecución.
+
+Está pensada como proyecto práctico para reforzar conceptos fundamentales del framework.
+
+---
+
+## 🛠️ Tecnologías utilizadas
+
+- Angular 21
+- TypeScript
+- RxJS
+- LocalStorage
+- Internacionalización (i18n)
+
+---
+
+## 📚 Pipes utilizados
+
+### 🔹 Pipes nativos
+
+- `DatePipe`
+- `UpperCasePipe`
+- `LowerCasePipe`
+- `TitleCasePipe`
+- `CurrencyPipe`
+- `DecimalPipe`
+- `PercentPipe`
+- `i18nPluralPipe`
+- `i18nSelectPipe`
+- `JsonPipe`
+- `KeyValuePipe`
+
+---
+
+### 🔹 Pipes personalizados
+
+- Pipes para transformar strings
+- Pipes dentro de propiedades computadas
+- Pipes para filtrar arreglos
+- Pipes para ordenar arreglos
+
+---
+
+## ✨ Funcionalidades
+
+- 🔁 Transformación dinámica de datos en templates
+- 🌍 Internacionalización
+- 🔄 Cambio de idioma en tiempo de ejecución
+- 💾 Persistencia de idioma en LocalStorage
+- 📊 Uso avanzado de pipes en propiedades computadas
+- 📂 Filtrado y ordenamiento de listas
+
+---
+
+## ▶️ Ejecución del proyecto
+
+Instalar dependencias:
 
 ```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+npm install
